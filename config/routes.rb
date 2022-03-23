@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  namespace :api do
+    get 'all_data', to:"appointments#all_data"
+    resources :doctors
+    resources :patients
+    resources :appointments
+  end
 end
